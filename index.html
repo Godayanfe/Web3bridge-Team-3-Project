@@ -1,93 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <link rel="stylesheet" href="./src/output.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./src/output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
 
-    <title>Frontend Mentor | Interactive card details form</title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 0.6875rem;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
-  </head>
-  <body>
-    <!-- <div class="frontcard bg-amber-200 h-7">
-      0000 0000 0000 0000 Jane Appleseed 00/00
+</head>
+<body class="font-[14px] font-space flex justify-center">
+  
+
+  <section class="form-container text-purple-950 font-medium bg-[hsl(0, 100%, 100%)]  text-black placeholder:text-gray-400 flex justify-center m-6 space-x-20">
+<form>
+  <label >CARDHOLDER NAME</label>
+  <input type="text" id="cardholder-name" placeholder="e.g. Jane Appleseed" class="h-8 text-black placeholder:text-gray-400 w-70 p-3 mt-2 mb-4 rounded-lg border-gray-200 border block ">
+
+
+  <label>CARD NUMBER </label> 
+<input type="text" id="card-number" placeholder="e.g. 1234 5678 9123 0000" class="h-8 w-70 p-3 mt-2 mb-4 rounded-lg  text-black placeholder:text-gray-400 border-gray-200 border block">
+
+<div class="dateCVC flex space-x-4">
+  <div class="date flex flex-col"> 
+    <label>EXP. DATE (MM/YY)</label>
+    <div class="flex space-x-4">
+      <input type="text" id="exp-date" placeholder="MM"  class="h-8 w-16 p-3 mt-2 mb-4 rounded-lg  text-black placeholder:text-gray-400 border-gray-200 border" > 
+      <input type="text" placeholder="YY"  class="h-8 w-16 p-3 mt-2 mb-4 rounded-lg  text-black placeholder:text-gray-400 border-gray-200 border">
     </div>
+  </div>
 
-    000 Cardholder Name e.g. Jane Appleseed Card Number e.g. 1234 5678 9123 0000
-    Exp. Date (MM/YY) MM YY CVC e.g. 123 Confirm -->
+  <div class="flex flex-col" > 
+    <label for="cvc">CVC</label> 
+    <input type="text" id="cvc" placeholder="e.g. 123"  class="h-8 w-30 p-3 rounded-lg  text-black placeholder:text-gray-400 border-gray-200 border  mt-2 mb-4"> 
+  </div>
+</div> 
 
-    <!-- Background -->
+<button type="submit" class="h-9 w-70 rounded-lg border text-white bg-purple-950">Confirm</button> <br>
+</form>
+</form>
 
-    <div class="flex items-center justify-start min-h-screen translate-x-100">
-      <div
-        class="relative w-111.75 h-61.75 rounded-[10px] overflow-hidden bg-linear-to from-[#f5f5f7] to-[#d9d9df] shadow-2xl"
-      >
-        <!-- Black strip -->
-        <div class="absolute top-5.75 left-0 w-full h-13.5 bg-[#2f2f2f]"></div>
 
-        <!-- Grey cvc section -->
-        <div
-          class="absolute top-26.25 left-8.75 w-94.25 h-9.5 bg-gray-400 rounded-sm flex items-center justify-end pr-4"
-        >
-          <span class="text-white text-[14px] tracking-[2px] font-medium">
-            000
-          </span>
-        </div>
 
-        <!-- Bottom fake text -->
-        <div
-          class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col gap-2 items-center"
-        >
-          <div class="flex gap-2">
-            <div class="w-22.5 h-1 bg-gray-300 rounded-full"></div>
-            <div class="w-13 h-1 bg-gray-300 rounded-full"></div>
-            <div class="w-10.5 h-1 bg-gray-300 rounded-full"></div>
-            <div class="w-2.5 h-1 bg-gray-300 rounded-full"></div>
-          </div>
 
-          <div class="flex gap-2">
-            <div class="w-6.25 h-1 bg-gray-300 rounded-full"></div>
-            <div class="w-13 h-1 bg-gray-300 rounded-full"></div>
-            <div class="w-13 h-1 bg-gray-300 rounded-full"></div>
-            <div class="w-2.5 h-1 bg-gray-300 rounded-full"></div>
-          </div>
 
-          <div class="flex gap-2">
-            <div class="w-2.5 h-1 bg-gray-300 rounded-full"></div>
-            <div class="w-10.5 h-1 bg-gray-300 rounded-full"></div>
-            <div class="w-13 h-1 bg-gray-300 rounded-full"></div>
-            <div class="w-22.5 h-1 bg-gray-300 rounded-full"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+</section>
 
-    <!-- Completed state start -->
+  <!-- Completed state start -->
 
-    Thank you! We've added your card details Continue
-
-    <footer class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
-    </footer>
-  </body>
+  
+</body>
 </html>

@@ -1,1 +1,8 @@
 @import "tailwindcss";
+@import "tailwindcss";
+
+ @theme {
+  --font-league: "League Spartan", sans-serif;
+   --font-space: "Space Grotesk", sans-serif;
+}
+
