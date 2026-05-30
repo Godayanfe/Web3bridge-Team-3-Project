@@ -6,48 +6,53 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./src/output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Interactive card details form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+
 </head>
-<body>
-<div class="frontcard bg-amber-200 h-7">
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+<body class="font-[14px] font-space flex justify-center">
+
+  <section class="form-container text-purple-950 font-medium bg-[hsl(0, 100%, 100%)]  text-black placeholder:text-gray-400 flex justify-center m-6 space-x-20">
+<form>
+  <label >CARDHOLDER NAME</label>
+  <input type="text" id="cardholder-name" placeholder="e.g. Jane Appleseed" class="h-8 text-black placeholder:text-gray-400 w-70 p-3 mt-2 mb-4 rounded-lg border-gray-200 border block ">
+
+
+  <label>CARD NUMBER </label> 
+<input type="text" id="card-number" placeholder="e.g. 1234 5678 9123 0000" class="h-8 w-70 p-3 mt-2 mb-4 rounded-lg  text-black placeholder:text-gray-400 border-gray-200 border block">
+
+<div class="dateCVC flex space-x-4">
+  <div class="date flex flex-col"> 
+    <label>EXP. DATE (MM/YY)</label>
+    <div class="flex space-x-4">
+      <input type="text" id="exp-date" placeholder="MM"  class="h-8 w-16 p-3 mt-2 mb-4 rounded-lg  text-black placeholder:text-gray-400 border-gray-200 border" > 
+      <input type="text" placeholder="YY"  class="h-8 w-16 p-3 mt-2 mb-4 rounded-lg  text-black placeholder:text-gray-400 border-gray-200 border">
+    </div>
   </div>
 
-  000
+  <div class="flex flex-col" > 
+    <label for="cvc">CVC</label> 
+    <input type="text" id="cvc" placeholder="e.g. 123"  class="h-8 w-30 p-3 rounded-lg  text-black placeholder:text-gray-400 border-gray-200 border  mt-2 mb-4"> 
+  </div>
+</div> 
 
-  Cardholder Name
-  e.g. Jane Appleseed
+<button type="submit" class="h-9 w-70 rounded-lg border text-white bg-purple-950">Confirm</button> <br>
+</form>
+</form>
 
-  Card Number
-  e.g. 1234 5678 9123 0000
 
-  Exp. Date (MM/YY)
-  MM
-  YY
 
-  CVC
-  e.g. 123
 
-  Confirm
+
+</section>
 
   <!-- Completed state start -->
 
-  Thank you!
-  We've added your card details
-  Continue
   
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
 </body>
 </html>
