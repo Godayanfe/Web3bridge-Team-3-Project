@@ -362,6 +362,9 @@
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
   }
+  .pt-\[80px\] {
+    padding-top: 80px;
+  }
   .pt-\[100px\] {
     padding-top: 100px;
   }
@@ -496,6 +499,11 @@
   .md\:h-\[245px\] {
     @media (width >= 48rem) {
       height: 245px;
+    }
+  }
+  .md\:h-auto {
+    @media (width >= 48rem) {
+      height: auto;
     }
   }
   .md\:min-h-screen {
