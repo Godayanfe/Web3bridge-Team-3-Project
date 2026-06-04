@@ -61,3 +61,6 @@ We had difficulty getting our custom font from Google Fonts to apply correctly a
 Tailwind's utility classes for background images only support static values defined in the config file, so we could not use our custom image paths directly as Tailwind classes. We solved this by using vanilla CSS.. This was a deliberate choice to keep things simple while still getting the result we needed.
 
 ## Live Server
+
+github link: (https://godayanfe.github.io/Web3bridge-Team-3-Project/)
+vercel link:
