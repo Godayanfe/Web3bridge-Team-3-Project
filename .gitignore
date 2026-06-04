@@ -39,3 +39,5 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 /node_modulus
+
+node_modules/
