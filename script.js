@@ -35,7 +35,7 @@ cardNumber.addEventListener("input", () => {
 
   cardNumber.value = formattedNumber;
   cardNumberDisplay.textContent =
-    formattedNumber || "0000 0000 0000 0000";
+    formattedNumber || "0000 0000 0000 0000"; // return back this if the formattednumber is false
 });
 
 const expMonth = document.getElementById("exp-month");
