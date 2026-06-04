@@ -199,14 +199,29 @@
   .top-\[67px\] {
     top: 67px;
   }
+  .top-\[70px\] {
+    top: 70px;
+  }
   .top-\[90px\] {
     top: 90px;
+  }
+  .top-\[100px\] {
+    top: 100px;
+  }
+  .top-\[170px\] {
+    top: 170px;
   }
   .right-\[16px\] {
     right: 16px;
   }
   .right-\[30px\] {
     right: 30px;
+  }
+  .left-\[9px\] {
+    left: 9px;
+  }
+  .left-\[10px\] {
+    left: 10px;
   }
   .left-\[16px\] {
     left: 16px;
