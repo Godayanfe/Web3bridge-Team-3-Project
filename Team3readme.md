@@ -63,4 +63,4 @@ Tailwind's utility classes for background images only support static values defi
 ## Live Server
 
 github link: (https://godayanfe.github.io/Web3bridge-Team-3-Project/)
-vercel link:
+vercel link: (https://web3bridge-team-3-project.vercel.app/)
