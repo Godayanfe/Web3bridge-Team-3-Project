@@ -52,4 +52,12 @@ Getting the two cards to sit correctly on top of each other — with the back ca
 
 Since we were working as a team on the same files, we ran into merge conflicts when pushing and pulling code from GitHub. Lines of code that different team members had edited at the same time would clash, and Git could not automatically decide which version to keep. We resolved this by communicating more clearly about who was working on which part of the code, pulling the latest changes before starting work, and carefully manually merging the correct version.
 
+### 4. Applying Google Fonts
+
+We had difficulty getting our custom font from Google Fonts to apply correctly across the page. Tailwind CSS uses its own default font stack, so simply linking the Google Font in the <head> was not enough — Tailwind was overriding it. We had to add a small CSS rule in the <style> block to set the font-family on the body directly, which is one of the cases where we used vanilla CSS alongside Tailwind.
+
+### 5. Background Images on the Cards and Left Panel
+
+Tailwind's utility classes for background images only support static values defined in the config file, so we could not use our custom image paths directly as Tailwind classes. We solved this by using vanilla CSS.. This was a deliberate choice to keep things simple while still getting the result we needed.
+
 ## Live Server
