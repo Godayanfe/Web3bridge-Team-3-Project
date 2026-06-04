@@ -71,22 +71,18 @@ expYear.addEventListener("input", () => {
   let value = expYear.value;
 
   let yearOnly = "";
+
+  // Keep only numbers
   for (let i = 0; i < value.length; i++) {
     if (value[i] >= "0" && value[i] <= "9") {
       yearOnly += value[i];
     }
   }
-yearOnly.value = yearOnly.slice(0, 2);
 
-  // if (Number(yearOnly) <= 26) {
-  //   yearOnly = "27";
-  // }
-  const currentYear = 26; // 2026
+  // Limit to 2 digits
+  yearOnly = yearOnly.slice(0, 2);
 
-if (Number(expYear.value) < currentYear) {
-  alert("Year cannot be less than 26");
-}
-   expYear.value = yearOnly
+  expYear.value = yearOnly;
 
   updateExpiryDisplay();
 });
@@ -98,3 +94,108 @@ function updateExpiryDisplay() {
 
   cardExpDisplay.textContent = `${month}/${year}`;
 }
+const cvc = document.getElementById("cvc");
+const cardCvcDisplay = document.getElementById("card-cvc-display");
+
+cvc.addEventListener("input", () => {
+  let value = cvc.value;
+
+  let cvcOnly = "";
+
+  // Keep only numbers
+  for (let i = 0; i < value.length; i++) {
+    if (value[i] >= "0" && value[i] <= "9") {
+      cvcOnly += value[i];
+    }
+  }
+
+  // Limit to 3 digits
+  cvcOnly = cvcOnly.slice(0, 3);
+
+  cvc.value = cvcOnly;
+
+  // Update card display
+  cardCvcDisplay.textContent = cvcOnly || "000";
+});
+const form = document.getElementById("card-form");
+const formState = document.getElementById("form-state");
+const completeState = document.getElementById("complete-state");
+
+const errorName = document.getElementById("error-name");
+const errorNumber = document.getElementById("error-number");
+const errorExp = document.getElementById("error-exp");
+const errorCvc = document.getElementById("error-cvc");
+
+form.addEventListener("submit", (e) => {
+  // Prevent page refresh
+  e.preventDefault();
+
+  let isFormValid = true;
+
+  // Clear previous errors
+  errorName.textContent = "";
+  errorNumber.textContent = "";
+  errorExp.textContent = "";
+  errorCvc.textContent = "";
+
+  errorName.classList.add("hidden");
+  errorNumber.classList.add("hidden");
+  errorExp.classList.add("hidden");
+  errorCvc.classList.add("hidden");
+
+  // NAME
+  if (cardHolderName.value.trim() === "") {
+    errorName.textContent = "Can't be blank";
+    errorName.classList.remove("hidden");
+    isFormValid = false;
+  }
+
+  // CARD NUMBER
+  if (cardNumber.value.trim().length < 19) {
+    errorNumber.textContent = "Enter a valid card number";
+    errorNumber.classList.remove("hidden");
+    isFormValid = false;
+  }
+
+  // EXPIRY
+ const currentYear = 26;
+
+if (
+  expMonth.value.trim() === "" ||
+  expYear.value.trim() === ""
+) {
+  errorExp.textContent = "Can't be blank";
+  errorExp.classList.remove("hidden");
+  isFormValid = false;
+} else if (Number(expYear.value) <= currentYear) {
+  errorExp.textContent = "Year must be greater than 26";
+  errorExp.classList.remove("hidden");
+  isFormValid = false;
+}
+
+  // CVC
+  if (cvc.value.length !== 3) {
+    errorCvc.textContent = "Enter a valid CVC";
+    errorCvc.classList.remove("hidden");
+    isFormValid = false;
+  }
+
+  // SUCCESS
+  if (isFormValid) {
+    formState.classList.add("hidden");
+    completeState.classList.remove("hidden");
+  }
+});
+const continueBtn = document.getElementById("continue-btn");
+
+continueBtn.addEventListener("click", () => {
+  form.reset();
+
+  formState.classList.remove("hidden");
+  completeState.classList.add("hidden");
+
+  cardNumberDisplay.textContent = "0000 0000 0000 0000";
+  cardNameDisplay.textContent = "JANE APPLESEED";
+  cardExpDisplay.textContent = "00/00";
+  cardCvcDisplay.textContent = "000";
+});
